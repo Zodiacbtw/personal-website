@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import "./darkmodetoggle.css";
+import { useLanguage } from "../context/LanguageContext";
 
 export function DarkModeToggle() {
+  const { translations, language } = useLanguage();
+
+  if (!translations[language]) return null;
+
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark" ||
       (!localStorage.getItem("theme") &&
@@ -26,7 +31,7 @@ export function DarkModeToggle() {
       <button className="toggle-btn" onClick={() => setIsDarkMode(!isDarkMode)}>
         <div className={`toggle-circle ${isDarkMode ? "dark" : ""}`}></div>
       </button>
-      <span className="toggle-text">DARK MODE</span>
+      <span className="toggle-text">{isDarkMode ? translations[language].dark_mode.disable : translations[language].dark_mode.enable}</span>
     </div>
   );
 };

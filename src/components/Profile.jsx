@@ -14,11 +14,11 @@ export function Profile() {
                 <div className='profile-info'>
                     <h4>{translations[language].profile}</h4>
                     <ul>
-                        <li><strong>{translations[language].birth_date}</strong> 28.09.1999</li>
-                        <li><strong>{translations[language].city}</strong> Aydın</li>
-                        <li><strong>{translations[language].education}</strong> Düzce Üniversitesi Bilgisayar Mühendisliği</li>
-                        <li><strong>{translations[language].degree}</strong> 2025</li>
-                        <li><strong>{translations[language].preferred_role}</strong> Data Science</li>
+                        <li><strong>{translations[language].birth_date}</strong>{translations[language].birth_date_info}</li>
+                        <li><strong>{translations[language].city}</strong>{translations[language].city_info}</li>
+                        <li><strong>{translations[language].education}</strong>{translations[language].education_info}</li>
+                        <li><strong>{translations[language].degree}</strong>{translations[language].degree_info}</li>
+                        <li><strong>{translations[language].preferred_role}</strong>{translations[language].preferred_role_info}</li>
                     </ul>
                 </div>
 
